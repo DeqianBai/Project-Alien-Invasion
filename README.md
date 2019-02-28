@@ -14,9 +14,11 @@
 
 ## 1. 武装飞船
 在第一个开发阶段，我们将创建一艘可左右移动的飞船，这艘飞船在用户按空格键时能够开
-火。设置好这种行为后，我们就能够将注意力转向外星人，并提高这款游戏的可玩性。此阶段包含
+火。设置好这种行为后，我们就能够将注意力转向外星人，并提高这款游戏的可玩性。
 
+包括：
 * alien_invasion.py
+
 主文件alien_invasion.py创建一系列整个游戏都要用到的对象：存储在 ai_settings 中的设置、
 存储在 screen 中的主显示surface以及一个飞船实例。文件 alien_invasion.py 还包含游戏的主循环，
 这是一个调用 check_events() 、 ship.update() 和 update_screen() 的 while 循环。
@@ -24,20 +26,24 @@
 game_functions.py、ship.py）包含的代码被直接或间接地导入到这个文件中。
 
 * settings.py
+
 文件settings.py包含 Settings 类，这个类只包含方法 __init__() ，它初始化控制游戏外观和飞
 船速度的属性。
 
 * game_functions.py
+
 文件game_functions.py包含一系列函数，游戏的大部分工作都是由它们完成的。函数
 check_events() 检测相关的事件，如按键和松开，并使用辅助函数 check_keydown_events() 和
 check_keyup_events() 来处理这些事件。就目前而言，这些函数管理飞船的移动。模块
 game_functions 还包含函数 update_screen() ，它用于在每次执行主循环时都重绘屏幕。
 
 * ship.py
+
 文件ship.py包含 Ship 类，这个类包含方法 __init__() 、管理飞船位置的方法 update() 以及在
 屏幕上绘制飞船的方法 blitme() 。表示飞船的图像存储在文件夹images下的文件ship.bmp中。
 
 * bullet.py
+
 用来添加射击功能。将编写玩家按空格键时发射子弹（小矩形）的代码。子弹将在屏
 幕中向上穿行，抵达屏幕上边缘后消失。
 
@@ -58,9 +64,11 @@ game_functions 还包含函数 update_screen() ，它用于在每次执行主循
 
 包括：
 * alien.py
+
 alien.py用来控制每个外星人的行为，我们将像创建Ship 类那样创建这个类，同样的，需要在alien_invasion.py中创建一个 Alien 实例
 
 * game_stats.py
+
 game_stats.py用于跟踪游戏统计信息，记录飞船被撞了多少次，同时跟踪统计信息还有助于记分。帮助我们确定外星人与飞船发生碰撞时，该做些什么
 
 在此阶段你将学到：
@@ -75,10 +83,12 @@ game_stats.py用于跟踪游戏统计信息，记录飞船被撞了多少次，�
 我们还将修改这个游戏，使其在玩家的等级提高时加快节奏，并实现一个记分系统。包括：
 
 * button.py
+
 由于Pygame没有内置创建按钮的方法，我们创建一个 Button 类，用于创建带标签的实心矩形。
 你可以在游戏中使用这些代码来创建任何按钮
 
 * scoreboard.py
+
 为在屏幕上显示得分，我们需要创建一个新类 Scoreboard 。这个类用于显示当前得分、最高得分、等级和余下的飞船数。同样的在alien_invasion.py中创建一个 Scoreboard 实例
 
 在此阶段你将学到：
